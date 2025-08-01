@@ -39,3 +39,5 @@ fi
 kubectl version --client
 
 mv /home/vagrant/machines.txt /home/vagrant/kubernetes-the-hard-way
+
+ssh-keygen -t rsa -b 4096 -f /home/vagrant/.ssh/id_rsa -N ""
