@@ -37,3 +37,5 @@ if [ ! -d "/usr/local/bin/kubectl" ]; then
 fi
 
 kubectl version --client
+
+mv /home/vagrant/machines.txt /home/vagrant/kubernetes-the-hard-way

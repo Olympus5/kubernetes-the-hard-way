@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
       vb.cpus = 1
     end
 
+    jumpbox.vm.provision "file", source: "machines.txt", destination: "/home/vagrant/machines.txt"
     jumpbox.vm.provision "shell", name: "setup-k8s-components", path: "setup-k8s-components.sh"
   end
 
