@@ -38,6 +38,8 @@ Vagrant.configure("2") do |config|
       vb.memory = 2 * 1024
       vb.cpus = 1
     end
+
+    server.vm.provision "shell", name: "enable-root-ssh", path: "enable-root-ssh-k8s-cluster.sh"
   end
 
   config.vm.define "node-0" do |node_0|
@@ -48,6 +50,8 @@ Vagrant.configure("2") do |config|
       vb.memory = 2 * 1024
       vb.cpus = 1
     end
+
+    node_0.vm.provision "shell", name: "enable-root-ssh", path: "enable-root-ssh-k8s-cluster.sh"
   end
 
   config.vm.define "node-1" do |node_1|
@@ -58,5 +62,7 @@ Vagrant.configure("2") do |config|
       vb.memory = 2 * 1024
       vb.cpus = 1
     end
+
+    node_1.vm.provision "shell", name: "enable-root-ssh", path: "enable-root-ssh-k8s-cluster.sh"
   end
 end
